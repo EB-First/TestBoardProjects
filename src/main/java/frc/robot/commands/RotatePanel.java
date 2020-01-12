@@ -7,14 +7,19 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.util.Color;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Robot;
 
 public class RotatePanel extends CommandBase {
   /**
    * Creates a new RotatePanel.
    */
+  private Color initialColor;
+
   public RotatePanel() {
     // Use addRequirements() here to declare subsystem dependencies.
+    initialColor=Robot.m_colorSensor.findColor();
   }
 
   // Called when the command is initially scheduled.
@@ -25,6 +30,13 @@ public class RotatePanel extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    double numOfRev=0;
+    if (!(initialColor.equals(Robot.m_colorSensor.findColor()))){
+      numOfRev+=0.5;
+    }
+    if (numOfRev==6.0) {
+      //stop motor
+    }
   }
 
   // Called once the command ends or is interrupted.

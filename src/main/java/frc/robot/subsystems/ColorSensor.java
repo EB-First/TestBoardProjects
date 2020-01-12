@@ -78,6 +78,12 @@ public class ColorSensor extends SubsystemBase {
     return (panelSensor==colorTarget);
   }
 
+  public Color findColor(){
+    Color detectedColor=colorSensor.getColor();
+    ColorMatchResult match = colorMatcher.matchClosestColor(detectedColor);
+    return match.color;
+  }
+
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
