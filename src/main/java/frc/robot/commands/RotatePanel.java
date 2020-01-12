@@ -16,25 +16,26 @@ public class RotatePanel extends CommandBase {
    * Creates a new RotatePanel.
    */
   private Color initialColor;
+  private double numOfRev=0;
 
   public RotatePanel() {
     // Use addRequirements() here to declare subsystem dependencies.
-    initialColor=Robot.m_colorSensor.findColor();
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    initialColor=Robot.m_colorSensor.findColor();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double numOfRev=0;
     if (!(initialColor.equals(Robot.m_colorSensor.findColor()))){
-      numOfRev+=0.5;
+        if (Robot.m_colorSensor.findColor().equals(initialColor))
+          numOfRev+=0.5;
     }
-    if (numOfRev==6.0) {
+    if (numOfRev==3.0) {
       //stop motor
     }
   }
