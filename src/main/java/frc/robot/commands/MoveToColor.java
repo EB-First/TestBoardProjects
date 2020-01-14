@@ -29,8 +29,9 @@ public class MoveToColor extends CommandBase {
   @Override
   public void execute() {
     //Note: turn off backlight/LED to get a better reading of color because reading under control panel
-    if (Robot.m_colorSensor.isTargetColor(Robot.colorTarget))
+    if (Robot.m_colorSensor.isTargetColor(Robot.colorTarget)){
       //stop motor
+    }
   }
 
   // Called once the command ends or is interrupted.
