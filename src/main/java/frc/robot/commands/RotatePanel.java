@@ -15,6 +15,7 @@ public class RotatePanel extends CommandBase {
   /**
    * Creates a new RotatePanel.
    */
+  //is initial color an already known value?
   private Color initialColor;
   private double numOfRev=0;
 
@@ -31,6 +32,7 @@ public class RotatePanel extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    //loop, until motor stops
     if (!(initialColor.equals(Robot.m_colorSensor.findColor()))){
         if (Robot.m_colorSensor.findColor().equals(initialColor))
           numOfRev+=0.5;
