@@ -7,7 +7,7 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Ultrasonic;
+import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotMap;
 
@@ -18,15 +18,16 @@ public class DistanceSensor extends SubsystemBase {
   /**
    * Creates a new DistanceSensor.
    */
-  private Ultrasonic dist_sensor;
+  private AnalogPotentiometer dist_pot;
+  private final double fullRange=180; //change to full range of motion in appropriate units
+  private final double offset=0; //the "starting point" of the motion (location when pot is 0v)
   
   public DistanceSensor() {
-    dist_sensor=new Ultrasonic(RobotMap.PING_CHANNEL, RobotMap.ECHO_CHANNEL);
-    dist_sensor.setAutomaticMode(true);
+    dist_pot = new AnalogPotentiometer(RobotMap.DIST_SENSOR_ANALOG, fullRange, offset);
   }
 
   public double getDistance(){
-    return dist_sensor.getRangeInches();
+    return dist_pot.get();
   }
 
   @Override
