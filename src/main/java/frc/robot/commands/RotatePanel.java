@@ -21,6 +21,9 @@ public class RotatePanel extends CommandBase {
 
   public RotatePanel() {
     // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(Robot.m_colorSensor);
+    addRequirements(Robot.m_controlPanel);
+
   }
 
   // Called when the command is initially scheduled.
@@ -33,13 +36,15 @@ public class RotatePanel extends CommandBase {
   @Override
   public void execute() {
     //loop, until motor stops
-    if (!(initialColor.equals(Robot.m_colorSensor.findColor()))){
-        if (Robot.m_colorSensor.findColor().equals(initialColor))
-          numOfRev+=0.5;
+    while (numOfRev<3.0){
+      Robot.m_controlPanel.spin();
+
+      if (!(initialColor.equals(Robot.m_colorSensor.findColor()))){
+          if (Robot.m_colorSensor.findColor().equals(initialColor))
+            numOfRev+=0.5;
+      }
     }
-    if (numOfRev==3.0) {
-      //stop motor
-    }
+    Robot.m_controlPanel.stop();         
   }
 
   // Called once the command ends or is interrupted.
