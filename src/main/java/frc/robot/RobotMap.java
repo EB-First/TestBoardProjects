@@ -12,4 +12,5 @@ package frc.robot;
  */
 public class RobotMap {
     public static final int PS4_CONTROLLER_PORT=0;
+    public static final int CONTROL_PANEL_SPARK = 1;
 }

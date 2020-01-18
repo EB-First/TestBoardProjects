@@ -17,6 +17,8 @@ public class MoveToColor extends CommandBase {
   public MoveToColor() {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(Robot.m_colorSensor);
+    addRequirements(Robot.m_controlPanel);
+
   }
 
   // Called when the command is initially scheduled.
@@ -29,14 +31,16 @@ public class MoveToColor extends CommandBase {
   @Override
   public void execute() {
     //Note: turn off backlight/LED to get a better reading of color because reading under control panel
+    Robot.m_controlPanel.spin();
     if (Robot.m_colorSensor.isTargetColor(Robot.colorTarget)){
-      //stop motor
+       Robot.m_controlPanel.stop();                                                                                                                                                                                                                                                                                                                                         
     }
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    Robot.m_controlPanel.stop();
   }
 
   // Returns true when the command should end.
