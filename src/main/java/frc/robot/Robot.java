@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.util.Color;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.subsystems.ColorSensor;
+import frc.robot.subsystems.DistanceSensor;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -26,6 +27,7 @@ public class Robot extends TimedRobot {
   private RobotContainer m_robotContainer;
   public static ColorSensor m_colorSensor;
   public static Color colorTarget=Robot.m_colorSensor.kBlueTarget; //target to be changed
+  public static DistanceSensor m_distSensor;
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -38,6 +40,7 @@ public class Robot extends TimedRobot {
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
     m_colorSensor=new ColorSensor();
+    m_distSensor=new DistanceSensor();
   }
 
   /**

@@ -9,6 +9,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.RobotMap;
 
 /*
   Ping-response ultrasonic sensor
@@ -18,12 +19,9 @@ public class DistanceSensor extends SubsystemBase {
    * Creates a new DistanceSensor.
    */
   private Ultrasonic dist_sensor;
-  //port numbers to be changed
-  private final int PING_CHANNEL=1;
-  private final int ECHO_CHANNEL=1;
   
   public DistanceSensor() {
-    dist_sensor=new Ultrasonic(PING_CHANNEL, ECHO_CHANNEL);
+    dist_sensor=new Ultrasonic(RobotMap.PING_CHANNEL, RobotMap.ECHO_CHANNEL);
     dist_sensor.setAutomaticMode(true);
   }
 
