@@ -81,9 +81,17 @@ public class Limelight extends SubsystemBase {
   //The pipeline’s latency contribution (ms) Add at least 11ms for image capture latency.
   public double getLatency() {
     return NetworkTableInstance.getDefault().getTable(networktablename).getEntry("tl").getDouble(0);
-
   }
-
-
-
+//Gets the number of corners the limelight detects
+public double getNumOfCorners() {
+  return NetworkTableInstance.getDefault().getTable(networktablename).getEntry("tcornx").getDouble().length();
+}
+//Vertical sidelength of the rough bounding box (0 - 320 pixels)
+public double getVerticalSidelength() {
+  return NetworkTableInstance.getDefault().getTable(networktablename).getEntry("tvert").getDouble(0);
+}
+//Horizontal sidelength of the rough bounding box (0 - 320 pixels)
+public double getHorizontalSideLength() {
+  return NetworkTableInstance.getDefault().getTable(networktablename).getEntry("thor").getDouble(0);
+}
 }

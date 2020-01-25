@@ -9,7 +9,6 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Robot;
-
 public class MoveToColor extends CommandBase {
   /**
    * Creates a new MoveToColor.
@@ -30,7 +29,6 @@ public class MoveToColor extends CommandBase {
   public void execute() {
     //Note: turn off backlight/LED to get a better reading of color because reading under control panel
     if (Robot.m_colorSensor.isTargetColor(Robot.colorTarget)){
-      //stop motor
     }
   }
 
