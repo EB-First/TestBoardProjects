@@ -12,6 +12,8 @@ import edu.wpi.first.wpilibj.util.Color;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.subsystems.ColorSensor;
+import frc.robot.subsystems.Limelight;
+
 import frc.robot.subsystems.DistanceSensor;
 
 /**
@@ -28,7 +30,7 @@ public class Robot extends TimedRobot {
   public static ColorSensor m_colorSensor;
   public static Color colorTarget=Robot.m_colorSensor.kBlueTarget; //target to be changed
   public static DistanceSensor m_distSensor;
-
+  public static Limelight m_limelight;
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -41,6 +43,7 @@ public class Robot extends TimedRobot {
     m_robotContainer = new RobotContainer();
     m_colorSensor=new ColorSensor();
     m_distSensor=new DistanceSensor();
+    m_limelight = new Limelight("limelight");
   }
 
   /**
@@ -57,6 +60,7 @@ public class Robot extends TimedRobot {
     // and running subsystem periodic() methods.  This must be called from the robot's periodic
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
+    System.out.println(m_limelight.hasTarget());
   }
 
   /**
