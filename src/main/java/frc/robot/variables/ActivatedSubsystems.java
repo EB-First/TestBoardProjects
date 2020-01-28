@@ -5,22 +5,12 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.subsystems;
-
-import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.variables.RobotMap;
+package frc.robot.variables;
 
 /**
- * An example subsystem. You can replace me with your own Subsystem.
+ * Subsystems that will be enabled during run-time.
  */
-public class ExampleSubsystem extends Subsystem {
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
-
-    @Override
-    public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        // setDefaultCommand(new MySpecialCommand());
-    }
+public class ActivatedSubsystems {
+    final static public boolean Indexer = true;
 
 }

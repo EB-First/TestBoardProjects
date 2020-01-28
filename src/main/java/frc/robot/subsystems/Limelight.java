@@ -7,9 +7,10 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.networktables.*;
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
-public class Limelight extends SubsystemBase {
+
+public class Limelight extends Subsystem {
   private String networktablename;
   /**
     Constructs a new Limelight Object with network table name (to connect to the correct limelight). Normally just "limelight"
@@ -82,9 +83,10 @@ public class Limelight extends SubsystemBase {
   public double getLatency() {
     return NetworkTableInstance.getDefault().getTable(networktablename).getEntry("tl").getDouble(0);
   }
-//Gets the number of corners the limelight detects
+//Gets the number of corners the limelight detects (WIP)
 public double getNumOfCorners() {
-  return NetworkTableInstance.getDefault().getTable(networktablename).getEntry("tcornx").getDouble().length();
+ // return NetworkTableInstance.getDefault().getTable(networktablename).getEntry("tcornx").getDoubleArray().length();
+ return 4;
 }
 //Vertical sidelength of the rough bounding box (0 - 320 pixels)
 public double getVerticalSidelength() {
@@ -94,4 +96,10 @@ public double getVerticalSidelength() {
 public double getHorizontalSideLength() {
   return NetworkTableInstance.getDefault().getTable(networktablename).getEntry("thor").getDouble(0);
 }
+
+    @Override
+    protected void initDefaultCommand() {
+        // TODO Auto-generated method stub
+
+    }
 }

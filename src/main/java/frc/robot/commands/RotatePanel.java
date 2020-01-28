@@ -8,10 +8,10 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.util.Color;
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class RotatePanel extends CommandBase {
+public class RotatePanel extends Command {
   /**
    * Creates a new RotatePanel.
    */
@@ -40,11 +40,6 @@ public class RotatePanel extends CommandBase {
     if (numOfRev==3.0) {
       //stop motor
     }
-  }
-
-  // Called once the command ends or is interrupted.
-  @Override
-  public void end(boolean interrupted) {
   }
 
   // Returns true when the command should end.

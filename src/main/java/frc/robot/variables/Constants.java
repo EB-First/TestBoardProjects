@@ -5,22 +5,15 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.subsystems;
-
-import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.variables.RobotMap;
+package frc.robot.variables;
 
 /**
- * An example subsystem. You can replace me with your own Subsystem.
+ * Constants for robot.
  */
-public class ExampleSubsystem extends Subsystem {
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
+public class Constants {
+    final static public int driveSpeed  = 1;
+    final static public int shooterMode = 0; // mode 0: low shooter | mode 1: high shooter
 
-    @Override
-    public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        // setDefaultCommand(new MySpecialCommand());
-    }
+    final static public double intakeSpeed = 0.5;
 
 }

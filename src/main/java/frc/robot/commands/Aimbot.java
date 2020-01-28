@@ -7,16 +7,18 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-public class Aimbot extends CommandBase {
+public class Aimbot extends Command {
 
-  /**
-   * Creates a new Aimbot.
-   */
-  public MoveToColor() {
+    /**
+     * Creates a new Aimbot.
+     * 
+     * @return
+     */
+    public void MoveToColor() {
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(Robot.m_limelight);
+    requires(Robot.m_limelight);
 
   }
 
@@ -37,11 +39,6 @@ public class Aimbot extends CommandBase {
             //drive forward
         }
     }
-  }
-
-  // Called once the command ends or is interrupted.
-  @Override
-  public void end(boolean interrupted) {
   }
 
   // Returns true when the command should end.

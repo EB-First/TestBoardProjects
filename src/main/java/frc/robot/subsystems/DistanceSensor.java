@@ -8,13 +8,13 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.RobotMap;
+import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.variables.RobotMap;
 
 /*
   Ping-response ultrasonic sensor
 */
-public class DistanceSensor extends SubsystemBase {
+public class DistanceSensor extends Subsystem {
   /**
    * Creates a new DistanceSensor.
    */
@@ -23,15 +23,22 @@ public class DistanceSensor extends SubsystemBase {
   private final double offset=0; //the "starting point" of the motion (location when pot is 0v)
   
   public DistanceSensor() {
-    dist_pot = new AnalogPotentiometer(RobotMap.DIST_SENSOR_ANALOG, fullRange, offset);
+   // dist_pot = new AnalogPotentiometer(RobotMap.DIST_SENSOR_ANALOG, fullRange, offset);
   }
 
   public double getDistance(){
-    return dist_pot.get();
+ //   return dist_pot.get();
+ return 1;
   }
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
   }
+
+    @Override
+    protected void initDefaultCommand() {
+        // TODO Auto-generated method stub
+
+    }
 }

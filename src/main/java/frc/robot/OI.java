@@ -8,13 +8,15 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.MoveToColor;
 import frc.robot.commands.RotatePanel;
+
 
 /**
  * Add your docs here.
  */
+
 public class OI {
     public Joystick ps4_controller = new Joystick(RobotMap.PS4_CONTROLLER_PORT);
     public JoystickButton rotatePanelButton = new JoystickButton(ps4_controller, 11);

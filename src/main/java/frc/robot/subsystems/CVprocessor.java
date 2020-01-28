@@ -7,9 +7,10 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.variables.RobotMap;
 import edu.wpi.first.networktables.*;
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
-public class CVprocessor extends SubsystemBase {
+public class CVprocessor extends Subsystem {
   private String networktablename;
   /**
     Constructs a new CVprocessor Object with network table name (to connect to the correct Raspberry Pi). should be "raspberrypi"
@@ -38,6 +39,12 @@ public class CVprocessor extends SubsystemBase {
   public double getAvgR () {
     return NetworkTableInstance.getDefault().getTable(networktablename).getEntry("avgR").getDouble(0);
   }
+
+    @Override
+    protected void initDefaultCommand() {
+        // TODO Auto-generated method stub
+
+    }
 
 
 }

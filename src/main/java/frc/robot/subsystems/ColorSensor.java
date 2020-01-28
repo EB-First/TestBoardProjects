@@ -14,9 +14,9 @@ import com.revrobotics.ColorSensorV3;
 import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.util.Color;
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class ColorSensor extends SubsystemBase {
+import edu.wpi.first.wpilibj.command.Subsystem;
+public class ColorSensor extends Subsystem {
   //To be replaced after testing
   private final double BLUE_R=0.143;
   private final double BLUE_G=0.427;
@@ -88,4 +88,10 @@ public class ColorSensor extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
   }
+
+    @Override
+    protected void initDefaultCommand() {
+        // TODO Auto-generated method stub
+
+    }
 }

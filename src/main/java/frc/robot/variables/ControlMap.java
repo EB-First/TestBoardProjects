@@ -5,22 +5,15 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.subsystems;
-
-import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.variables.RobotMap;
+package frc.robot.variables;
 
 /**
- * An example subsystem. You can replace me with your own Subsystem.
+ * The ControlMap allows for organized and modular mapping of the game
+ * controllers buttons.
  */
-public class ExampleSubsystem extends Subsystem {
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
+public class ControlMap {
 
-    @Override
-    public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        // setDefaultCommand(new MySpecialCommand());
-    }
+  public static int leftStick = 0;
+  public static int rightStick = 0;
 
 }

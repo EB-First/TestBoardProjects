@@ -6,16 +6,16 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.commands;
+import edu.wpi.first.wpilibj.command.Command;
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Robot;
-public class MoveToColor extends CommandBase {
+public class MoveToColor extends Command {
   /**
    * Creates a new MoveToColor.
    */
   public MoveToColor() {
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(Robot.m_colorSensor);
+    requires(Robot.m_colorSensor);
   }
 
   // Called when the command is initially scheduled.
@@ -32,10 +32,6 @@ public class MoveToColor extends CommandBase {
     }
   }
 
-  // Called once the command ends or is interrupted.
-  @Override
-  public void end(boolean interrupted) {
-  }
 
   // Returns true when the command should end.
   @Override
