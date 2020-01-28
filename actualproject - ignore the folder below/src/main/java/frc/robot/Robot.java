@@ -13,10 +13,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj.util.Color;
 import frc.robot.subsystems.ColorSensor;
-<<<<<<< HEAD
 import frc.robot.subsystems.Limelight;
-=======
->>>>>>> parent of 4aed855... Created Aimbot.java
 import frc.robot.subsystems.DistanceSensor;
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -32,7 +29,6 @@ public class Robot extends TimedRobot {
   public static ColorSensor m_colorSensor;
   public static Color colorTarget=Robot.m_colorSensor.kBlueTarget; //target to be changed
   public static DistanceSensor m_distSensor;
-<<<<<<< HEAD
   public static Limelight m_limelight;
 
   private String m_autoSelected;
@@ -40,8 +36,6 @@ public class Robot extends TimedRobot {
 
   // Subsystem initialization and declarations
   public static ExampleSubsystem m_ExampleSubsystem = new ExampleSubsystem();
-=======
->>>>>>> parent of 4aed855... Created Aimbot.java
 
   /**
    * This function is run when the robot is first started up and should be
@@ -54,6 +48,7 @@ public class Robot extends TimedRobot {
     SmartDashboard.putData("Auto choices", m_chooser);
     m_colorSensor=new ColorSensor();
     m_distSensor=new DistanceSensor();
+    m_limelight = new Limelight("limelight");
   }
 
   /**
@@ -66,14 +61,6 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
-<<<<<<< HEAD
-=======
-    // Runs the Scheduler.  This is responsible for polling buttons, adding newly-scheduled
-    // commands, running already-scheduled commands, removing finished or interrupted commands,
-    // and running subsystem periodic() methods.  This must be called from the robot's periodic
-    // block in order for anything in the Command-based framework to work.
-    CommandScheduler.getInstance().run();
->>>>>>> parent of 4aed855... Created Aimbot.java
   }
 
   /**
