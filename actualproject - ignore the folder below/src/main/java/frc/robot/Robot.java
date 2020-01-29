@@ -26,7 +26,7 @@ public class Robot extends TimedRobot {
   private static final String kDefaultAuto = "Default";
   private static final String kCustomAuto = "My Auto";
   
-  public static ColorSensor m_colorSensor;
+  public static ColorSensor m_colorSensor=new ColorSensor();
   public static Color colorTarget=Robot.m_colorSensor.kBlueTarget; //target to be changed
   public static DistanceSensor m_distSensor;
   public static Limelight m_limelight;
