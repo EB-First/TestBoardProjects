@@ -44,6 +44,8 @@ public class ColorSensor extends Subsystem {
    * Creates a new ColorSensor.
    */
   public ColorSensor() {
+    System.out.println("Colorsensor constructed");
+
     colorMatcher.addColorMatch(kBlueTarget);
     colorMatcher.addColorMatch(kGreenTarget);
     colorMatcher.addColorMatch(kRedTarget);

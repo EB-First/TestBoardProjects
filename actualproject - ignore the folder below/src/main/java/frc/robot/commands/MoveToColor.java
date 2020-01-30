@@ -6,6 +6,8 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.commands;
+import java.net.Socket;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 import frc.robot.Robot;
@@ -21,14 +23,16 @@ public class MoveToColor extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    
+    System.out.println("Code Initialized MovetoColor");
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    System.out.println("Code Executed MovetoColor");
     //Note: turn off backlight/LED to get a better reading of color because reading under control panel
     if (Robot.m_colorSensor.isTargetColor(Robot.colorTarget)){
+      System.out.println("is target color");
     }
   }
 

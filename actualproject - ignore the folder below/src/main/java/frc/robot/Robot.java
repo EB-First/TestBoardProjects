@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.util.Color;
 import frc.robot.subsystems.ColorSensor;
 import frc.robot.subsystems.Limelight;
 import frc.robot.subsystems.DistanceSensor;
+import frc.robot.OI;
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -30,7 +31,7 @@ public class Robot extends TimedRobot {
   public static Color colorTarget=Robot.m_colorSensor.kBlueTarget; //target to be changed
   public static DistanceSensor m_distSensor;
   public static Limelight m_limelight;
-
+  public OI myOI;
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
@@ -43,12 +44,14 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+    myOI = new OI();
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
     m_chooser.addOption("My Auto", kCustomAuto);
     SmartDashboard.putData("Auto choices", m_chooser);
     m_colorSensor=new ColorSensor();
     m_distSensor=new DistanceSensor();
     m_limelight = new Limelight("limelight");
+    System.out.println("Robot On! :D");
   }
 
   /**
@@ -109,5 +112,6 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void testPeriodic() {
+    m_colorSensor.detectColor();
   }
 }

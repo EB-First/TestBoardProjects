@@ -23,8 +23,8 @@ public class OI {
     public JoystickButton findColorButton = new JoystickButton(ps4_controller, 12);
     
     public OI(){
-        rotatePanelButton.whenPressed(new RotatePanel());
-        findColorButton.whenPressed(new MoveToColor());
+        rotatePanelButton.whileHeld(new RotatePanel());
+        findColorButton.whileHeld(new MoveToColor());
     }
 
 }

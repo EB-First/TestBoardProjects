@@ -20,6 +20,7 @@ public class RotatePanel extends Command {
   private double numOfRev=0;
 
   public RotatePanel() {
+    System.out.println("panel rotate constructed");
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
@@ -27,11 +28,15 @@ public class RotatePanel extends Command {
   @Override
   public void initialize() {
     initialColor=Robot.m_colorSensor.findColor();
+    System.out.println("Code Initialized RotatePanel");
+
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    System.out.println("Code Executed RotatePanel");
+
     //loop, until motor stops
     if (!(initialColor.equals(Robot.m_colorSensor.findColor()))){
         if (Robot.m_colorSensor.findColor().equals(initialColor))
@@ -39,6 +44,7 @@ public class RotatePanel extends Command {
     }
     if (numOfRev==3.0) {
       //stop motor
+      System.out.print(numOfRev);
     }
   }
 
