@@ -15,7 +15,10 @@ import edu.wpi.first.wpilibj.util.Color;
 import frc.robot.subsystems.ColorSensor;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import frc.robot.subsystems.Limelight;
+=======
+>>>>>>> parent of 4aed855... Created Aimbot.java
 =======
 >>>>>>> parent of 4aed855... Created Aimbot.java
 =======
@@ -37,6 +40,7 @@ public class Robot extends TimedRobot {
   public static DistanceSensor m_distSensor;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   public static Limelight m_limelight;
 
   private String m_autoSelected;
@@ -44,6 +48,8 @@ public class Robot extends TimedRobot {
 
   // Subsystem initialization and declarations
   public static ExampleSubsystem m_ExampleSubsystem = new ExampleSubsystem();
+=======
+>>>>>>> parent of 4aed855... Created Aimbot.java
 =======
 >>>>>>> parent of 4aed855... Created Aimbot.java
 =======
@@ -80,6 +86,9 @@ public class Robot extends TimedRobot {
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 4aed855... Created Aimbot.java
+=======
 >>>>>>> parent of 4aed855... Created Aimbot.java
 =======
 >>>>>>> parent of 4aed855... Created Aimbot.java
