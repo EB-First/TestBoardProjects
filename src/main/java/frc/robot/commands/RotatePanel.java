@@ -15,7 +15,7 @@ public class RotatePanel extends CommandBase {
   /**
    * Creates a new RotatePanel.
    */
-  //is initial color an already known value?
+
   private Color initialColor;
   private double numOfRev=0;
 
@@ -43,8 +43,10 @@ public class RotatePanel extends CommandBase {
           if (Robot.m_colorSensor.findColor().equals(initialColor))
             numOfRev+=0.5;
       }
+      if (numOfRev==3.0){
+        Robot.m_controlPanel.stop();         
+      }
     }
-    Robot.m_controlPanel.stop();         
   }
 
   // Called once the command ends or is interrupted.
